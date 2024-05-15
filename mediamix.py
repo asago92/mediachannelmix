@@ -28,14 +28,14 @@ def main():
     
     st.write("### Sales Over Time")
     plt.figure(figsize=(10, 6))
-    sns.lineplot(x='Date', y='Sales', data=data)
+    sns.lineplot(x='Time', y='sales', data=data)
     st.pyplot(plt)
 
     st.write("### Media Spend Over Time")
     media_channels = [col for col in data.columns if 'Spend' in col]
     for channel in media_channels:
         plt.figure(figsize=(10, 6))
-        sns.lineplot(x='Date', y=channel, data=data)
+        sns.lineplot(x='Time', y=channel, data=data)
         plt.title(channel)
         st.pyplot(plt)
 
