@@ -10,16 +10,14 @@ import streamlit as st
 # Load the data
 @st.cache
 def load_data(file_path):
-    data = pd.read_excel(file_path)
+    data = pd.read_csv(file_path)
     return data
-
-data = load_data('media_channel_costs_sales.xlsx')
 
 def main():
     st.title("Media Channel Mix Model and Analysis")
 
     # Load and display data
-    data = load_data('media_channel_costs_sales.xlsx')
+    data = load_data('mediamix.csv')
     st.write("## Media Channel Costs and Sales Data")
     st.dataframe(data.head())
 
